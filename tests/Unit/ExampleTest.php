@@ -20,7 +20,9 @@ class ExampleTest extends TestCase
         $controller = new OperationsController;
 
         $result = $controller->addition(a: 4, b: 9);
+        $this->assertIsInt($result);
         $this->assertNotNull($result);
         $this->assertEquals(13, $result);
+        $this->assertGreaterThan(0, $result);
     }
 }
