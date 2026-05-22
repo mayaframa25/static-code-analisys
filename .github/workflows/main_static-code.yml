@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy PHP app to Azure Web App - example-app4
+name: Build and deploy PHP app to Azure Web App - static-code
 
 on:
   push:
@@ -51,14 +51,14 @@ jobs:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
-          name: ph
-
+          name: php-app
+      
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_CA9C830A442D401CA4AD181F1C476452 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_957834F25B634ECDADDEEF8C99441023 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_7CDE2F4F17D4458EAE0FA6501A0355D0 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_0F11FB53967E486D9020A21CF6E1B8EB }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_A8BE94440851486C9F93738814F4DCFF }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_4F5C998CDA184EAEA267D58529147755 }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
